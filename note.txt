@@ -1,0 +1,126 @@
+FOR FRONT END
+-------------
+1)
+cd client 
+npm create vite@latest
+npm install - inside client folder
+npm run dev
+click control + click link
+
+2)
+cd client
+npm install -D tailwindcss postcss autoprefixer (these 3 are dev dependencies)
+npx tailwindcss init -p
+
+in client - npm run dev
+
+
+
+3) websites
+------------
+ * https://tailwindcss.com/docs/text-overflow - css 
+ * openai.com
+ * tanstack react query
+
+4) <pre> - anything writtern inside its body will have escape character . eg: \n
+
+
+FOR BACK END
+------------
+
+
+1) 
+cd server 
+npm init
+npm i body-parser cors dotenv express nodemon openai.
+
+
+
+2) in package.json
+ .
+ .
+ .
+ .
+ "type": "module", - to use import for importing files, else we should use require for importing files which is old method.
+
+"scripts": {
+   "start": "nodemon index.js"
+  },
+
+3) import statements required for this project
+-----------------------------------------------
+
+
+
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import env from 'dotenv'
+import {Configuration,OpenAIApi} from'openai'
+
+
+1)
+(cd server 
+ npm init
+ npm i body-parser cors dotenv express nodemon openai.)
+npm start
+
+4)
+* take openapi.com site 
+* login
+* take personal at top right
+* create new apikey
+* copy paste it
+* create new file in server .env
+* paste key in a variable eg: API_KEY
+
+
+5)
+const configuration = new Configuration({
+    organization: "org-8W9gvj0QseVnuKhXij9lcTa0", (this key is from open api.com in personal settings on leftside - organization ID)
+    apikey: process.env.API_KEY
+})
+
+* learn about each parameter in openai.com -> documentation
+                                ----------    -------------
+
+
+* ctrl + c - to restart server cmd prompt .
+* npm start
+
+
+6)
+ npm start   ( in new terminal  )
+
+* close all 
+
+
+FOR FRONT END
+--------------
+
+5)in client 
+ npm i react-query     - for using useMutation
+
+
+
+ 6)import { QueryClientProvider,QueryClient } from 'react-query'
+
+
+  <QueryClientProvider client={queryClient}>     //pass query client as parameter like this for all react application.
+     <App />
+   </QueryClientProvider>
+
+
+  7)notes
+  -------
+
+  * key = {i} is used  in chatBody.jsx to avoid warning of uniques key .
+  *  pass query client as parameter like this for all react application. (in main.jsx)
+
+8) FOR ANIMATION
+-----------------
+
+* npm i @formkit/auto-animate  (in client)   (for giving simple animations when chat appears in chatbot)
+* npm install --save-dev tailwind-scrollbar (in client)   (for tailwind scrollbar)
+
+
